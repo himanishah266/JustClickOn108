@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.AmbulanceVO" table="ambulance" lazy="false">
+
+		<id name="ambulanceNumber" type="int" column="ambulanceNumber">
+			<generator class="increment" />
+
+		</id>
+
+		<property name="modelNumber">
+			<column name="modelNumber" />
+		</property>
+
+
+		<property name="allocation">
+			<column name="allocation" />
+		</property>
+		
+		<property name="latitude">
+			<column name="latitude" />
+		</property>
+		
+		<property name="longitude">
+			<column name="longitude" />
+		</property>
+		
+	
+		<property name="passingYear">
+			<column name="passingYear"></column>
+		</property>
+
+
+		<property name="deleteStatus">
+			<column name="deleteStatus"></column>
+		</property>
+
+		<many-to-one name="statevo" class="VO.StateVO" column="stateID"></many-to-one>
+		<many-to-one name="cityvo" class="VO.CityVO" column="cityID"></many-to-one>
+		<many-to-one name="areavo" class="VO.AreaVO" column="areaID"></many-to-one>
+
+
+	</class>
+</hibernate-mapping>

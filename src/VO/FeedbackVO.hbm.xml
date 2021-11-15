@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.FeedbackVO" table="feedback" lazy="false">
+
+		<id name="feedbackID" type="int" column="feedbackID">
+			<generator class="increment" />
+
+		</id>
+
+		<property name="subject">
+			<column name="subject" />
+		</property>
+
+
+		<property name="message">
+			<column name="message" />
+		</property>
+		
+		<property name="feedbackDate">
+			<column name="feedbackDate" />
+		</property>
+		
+		<property name="feedbackTime">
+			<column name="feedbackTime" />
+		</property>
+
+	
+		<many-to-one name="feedbackFrom" class="VO.LoginVO" column="feedbackFrom"></many-to-one>
+
+
+	</class>
+</hibernate-mapping>

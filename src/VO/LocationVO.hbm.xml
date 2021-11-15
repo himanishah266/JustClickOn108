@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.LocationVO" table="sendLocation" lazy="false">
+
+		<id name="locationID" type="int" column="LocationID">
+			<generator class="increment" />
+
+		</id>
+		
+		
+
+		<property name="latitude">
+			<column name="latitude" />
+		</property>
+
+
+		<property name="longitude">
+			<column name="longitude" />
+		</property>
+
+		<property name="status">
+			<column name="status" />
+		</property>
+
+
+		<many-to-one name="ambulanceVO" class="VO.AmbulanceVO" column="ambulanceVO"></many-to-one>
+		<many-to-one name="loginvo" class="VO.LoginVO" column="userid"></many-to-one>
+
+				<many-to-one name="hvo" class="VO.HospitalVO" column="hospitalID"></many-to-one>
+		
+
+	</class>
+</hibernate-mapping>

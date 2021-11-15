@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.StaffVO" table="Staffdetail" lazy="false">
+
+		<id name="serialNo" type="int" column="serialNo">
+			<generator class="increment" />
+
+		</id>
+		
+		
+
+		<property name="firstName">
+			<column name="firstname" />
+		</property>
+		
+		
+		
+
+		<property name="lastName">
+			<column name="lastname" />
+		</property>
+
+		<property name="birthDate">
+			<column name="birthDate"></column>
+		</property>
+
+
+		<property name="deleteStatus">
+			<column name="deleteStatus"></column>
+		</property>
+		
+		<property name="contactNo">
+			<column name="contactNo"></column>
+		</property>
+		
+		<property name="gender">
+			<column name="gender"></column>
+		</property>
+		
+		<property name="post">
+			<column name="post"></column>
+		</property>
+
+		<many-to-one name="statevo" class="VO.StateVO" column="stateID"></many-to-one>
+		<many-to-one name="cityvo" class="VO.CityVO" column="cityID"></many-to-one>
+		<many-to-one name="areavo" class="VO.AreaVO" column="areaID"></many-to-one>
+		<many-to-one name="avo" class="VO.AmbulanceVO" column="ambulanceNumber"></many-to-one>
+				<many-to-one name="loginvo" class="VO.LoginVO" column="loginID"></many-to-one>
+				
+				
+	</class>
+</hibernate-mapping>
+	
